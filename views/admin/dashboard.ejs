@@ -1,0 +1,110 @@
+<%- include('../layouts/header.ejs') %>
+
+    <header>
+        <div class="text-center bg-image" style="
+      background-image: url(https://i.pinimg.com/originals/be/69/51/be695128c9b20746105fe687ee044a19.jpg);
+       background-size: contain;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
+                style="backdrop-filter:blur(10px); height: 60px;">
+                <div class="container">
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center hidden-arrow" style="margin-left: -5px;" href="/admin"
+                            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                height="35" alt="Edit" loading="lazy" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler text-white" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample"
+                        aria-expanded="false" aria-label="Toggle navigation">Dashboard
+                    </button>
+                    <div class="collapse navbar-collapse " style="margin-left: 6px;">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/home" style="color:mintcream;">Manage - Users list
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center">
+                            <a href="/admin/new-user"><button type="button" class="btn btn-outline-light me-3 bg-transparent text-white" style="border-color: rgb(255, 255, 255);">Add user</button></a>
+                            <!-- <a class="btn btn-outline-light btn-lg py-1 mb-3 mt-3 text-white bg-transparent" href="/admin/home" style="border-color: rgb(255, 255, 255);" role="button">Go Back</a> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div>
+            <form class="d-flex mt-3 mb-4" style="width: 30vw; float:left; margin-right: 100px;" >
+                <input class="form-control me-2 bg-transparent px-4" name="search" style="border-color: rgb(255, 255, 255); color: deepskyblue; margin-left: 75px;" type="search" placeholder="Search" aria-label="Search" required>
+                <button class="btn btn-outline-success bg-transparent px-3" style="border-color: rgb(255, 255, 255); color: #fff;" type="submit">Search</button>
+            </form>
+        </div>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 100vh;">
+                <div style="color: lightgray;" class="container">
+                        <table class="table align-middle mb-0 bg-transparent text-white">
+                            <thead class="bg-transparent text-white">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(users.length> 0){
+                                    for(let i=0;i< users.length;i++){ %>
+                                <tr>
+                                    <td>
+                                    <p style="color: aliceblue;"><%= [i+1] %></p>
+                                </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://media.tenor.com/XdFv1bbfOdEAAAAd/user-icons.gif" alt="" style="width: 45px; height: 45px"
+                                                class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="mb-1"><%= users[i].name %></p>
+                                                <p class="text-muted mb-0">User Name</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal mb-1"><%= users[i].mobile %></p>
+                                        <p class="text-muted mb-0">Mobile Number</p>
+                                    </td>
+                                    <td>
+                                        <p class="fw-normal mb-1"><%= users[i].email %></p>
+                                        <p class="text-muted mb-0">Email</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success rounded-pill d-inline" style="color: rgb(0, 255, 0);">Active</span>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/edit-user?id=<%= users[i]._id %>"><button type="button" class="btn btn-link btn-sm btn-rounded"><span class="material-symbols-outlined">
+                                            edit
+                                        </span></button></a>
+                                        <a href="/admin/delete-user?id=<%= users[i]._id %>"><button type="button" class="btn btn-link btn-sm btn-rounded"><span class="material-symbols-outlined" style="color: red; margin-left: 5px;">
+                                            delete
+                                        </span></button></a>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <%
+                            }
+                        }else{
+                            %>
+                             <tr>
+                                <td colspan="5"><p style="float: left; margin-top: 7px;">User Not Found</p></td>
+                            </tr>
+                            <%
+                        }
+                        %>
+                    </tbody>
+                        </table>
+                        <a class="btn btn-outline-light btn-lg px-4 py-1 mb-3 mt-3" style="border-color: aqua;" href="/admin/dashboard" role="button">Back</a>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <%- include('../layouts/footer.ejs') %>

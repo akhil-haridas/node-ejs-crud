@@ -1,0 +1,40 @@
+<%- include('../layouts/header.ejs') %>
+
+    <section class="vh-150 gradient-custom py-2" style="background: black;">
+        <div class="container py-5 h-100" >
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="backdrop-filter: blur(2px);">
+                    <div class="card bg-transparent text-white" style="border-radius: 3rem;">
+                        <div class="card-body py-5 text-center">
+                            <form class="mb-md-5 mt-md-4 pb-5" action="" method="post">
+                                <h3 class="fw-bold mb-2 text-uppercase">E D I T - U S E R</h3>
+                                <p class="text-white-50 mb-3">Edit your name ,email or mobile!</p>
+                                <input type="hidden" name="user_id" value="<%= user._id %>">
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white"
+                                        name="name" value="<%= user.name %>" placeholder="Edit name" required />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label">Mobile</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white" name="mobile"
+                                        value="<%= user.mobile %>" placeholder="Edit Mobile Number" required />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control form-control-lg bg-transparent text-white"
+                                        name="email" value="<%= user.email %>" placeholder="Edit email" required />
+                                </div>
+                                <input type="hidden" name="id" value="<%= user._id %>">
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit"
+                                    value="Update User">Update</button>
+                            </form>
+                            <a href="/admin/"><button class="btn btn-outline-light px-5" style="margin-top: -130px;">Go to Dashboard</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('../layouts/footer.ejs') %>

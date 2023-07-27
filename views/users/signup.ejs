@@ -1,0 +1,63 @@
+<%- include('../layouts/header.ejs') %>
+
+<section class="vh-150 bg-image" style="background:url(https://4kwallpapers.com/images/walls/thumbs_3t/8324.png); background-size: cover;" >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6" style="backdrop-filter: 50px;">
+                    <div class="card" style="border-radius: 25px; background:transparent;">
+                        <div class="card-body p-5" style="background: transparent;">
+                            <h2 class="text-center mb-5" style="color: aliceblue;">Create   Account</h2>
+                            <div class="d-flex justify-content-center align-items-center mt-4">
+                                <% if(typeof message !=='undefined' ){ %>
+                                    <h4 style="color: rgb(0, 255, 0);">
+                                        <%= message %>
+                                    </h4>
+                                    <% } %>
+                            </div>
+                            <form action="" method="post">
+                                <div class="form-outline mb-4" style="color: aliceblue; ">
+                                    
+                                    <label class="form-label">NAME</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white" name="name" placeholder="Enter your name" required />
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">MOBILE</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white" name="mobile"placeholder="Enter your mobile number" required />
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">EMAIL</label>
+                                    <input type="email" class="form-control form-control-lg bg-transparent text-white" name="email" placeholder="Enter your email" required/>
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">PASSWORD</label>
+                                    <input type="password" class="form-control form-control-lg bg-transparent text-white" name="password" placeholder="Set a password" required/>
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-5" style="color: aliceblue;">
+                                    <input class="form-check-input me-2 text-white" type="checkbox" value=""/>
+                                    <label class="form-check-label">
+                                        I agree all statements in <a href="#" class="text-body"><u style="color: aliceblue;">Terms of
+                                                service</u></a>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                        class="btn btn-light btn-block btn-lg gradient-custom-4 text-body" style="border-radius: 30px;" value="Signup">Register</button>
+                                </div>
+                                <p class="text-center text-muted mt-4 mb-0" style="color: aliceblue;">Have already an account? <a href="/login"
+                                        class="fw-bold text-body"><u style="color: silver;">Login here</u></a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../layouts/footer.ejs') %>

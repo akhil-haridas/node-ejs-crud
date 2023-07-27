@@ -1,0 +1,55 @@
+<%- include('../layouts/header.ejs') %>
+
+<section class="vh-160 bg-image" style="background:url(https://4kwallpapers.com/images/walls/thumbs_3t/8324.png); background-size: cover;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6" style="backdrop-filter: blur(3px);">
+                    <div class="card" style="border-radius: 25px; background:transparent;">
+                        <div class="card-body p-5" style="background: transparent;">
+                            <h2 class="text-center mb-5" style="color: aliceblue;">CREATE USER</h2>
+                            <form action="" method="post">
+                                <div class="form-outline mb-4" style="color: aliceblue; ">
+                                    
+                                    <label class="form-label">NAME</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white" name="name" placeholder="Enter name" required />
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">MOBILE</label>
+                                    <input type="text" class="form-control form-control-lg bg-transparent text-white" name="mobile"placeholder="Enter mobile number" required />
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">EMAIL</label>
+                                    <input type="email" class="form-control form-control-lg bg-transparent text-white" name="email" placeholder="Enter email" required/>
+                                </div>
+
+                                <div class="form-outline mb-4" style="color: aliceblue;">
+                                    <label class="form-label">PASSWORD</label>
+                                    <input type="password" class="form-control form-control-lg bg-transparent text-white" name="password" placeholder="Set a password" required/>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                        class="btn btn-light btn-block btn-lg gradient-custom-4 text-body px-5" style="border-radius: 30px;" value="Signup">Create user</button>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center mt-4">
+                                    <% if(typeof message !=='undefined' ){ %>
+                                        <h5 style="color: red;">
+                                            <%= message %>
+                                        </h5>
+                                        <% } %>
+                                </div>
+                            </form>
+                            <div class="d-flex justify-content-center">
+                                <a href="/admin/dashboard"><button class="btn btn-light gradient-custom-4 text-body"
+                                        style="border-radius: 30px;">Go Back</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../layouts/footer.ejs') %>            

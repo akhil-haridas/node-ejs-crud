@@ -1,0 +1,49 @@
+<%- include('../layouts/header.ejs') %>
+
+    <header>
+        <div class="text-center bg-image" style="
+      background-image: url(https://i.pinimg.com/564x/7b/ea/0f/7bea0f0cdf9b89e6510e7549d6c84a51.jpg);
+       background-size: contain; height:100vh;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
+                style="backdrop-filter:blur(10px); height: 60px;">
+                <div class="container">
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center hidden-arrow" style="margin-left: -5px;"
+                            href="" role="button" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                height="35" alt="Edit" loading="lazy" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler text-white" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample"
+                        aria-expanded="false" aria-label="Toggle navigation"><%=admin.name %>
+                    </button>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin" style="color:mintcream;"><%=admin.name %>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center">
+                            <a href="/admin/logout"><button type="button" class="btn btn-dark me-3 px-4 bg-transparent">Logout</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin-top: 120px; height: 350px;">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div style="color: lightgray;">
+                        <h1 class="mb-3"><%=admin.name %></h1>
+                        <h3 class="mb-3">Email : <%= admin.email %></h3>
+                        <h5 class="mb-3">Mobile : <%= admin.mobile %></h5>
+                        <a class="btn btn-outline-light btn-lg px-4 py-1 mt-3" href="/admin/dashboard"
+                            role="button">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <%- include('../layouts/footer.ejs') %>
